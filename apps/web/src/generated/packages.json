@@ -1,0 +1,68 @@
+[
+  {
+    "id": "dd/imap",
+    "owner": "dd",
+    "name": "imap",
+    "versions": [
+      {
+        "version": "1.0.0",
+        "description": "A small TypeScript IMAP client for fetching unseen email over implicit TLS.",
+        "owner": {
+          "name": "dd"
+        },
+        "repository": "https://github.com/donatas/vibenpm",
+        "keywords": [
+          "imap",
+          "email",
+          "tls",
+          "cloudflare-workers",
+          "typescript"
+        ],
+        "entrypoints": [
+          "imap.ts"
+        ],
+        "files": [
+          "README.md",
+          "agent-package.json",
+          "imap.ts"
+        ],
+        "readme": "# imap\n\nA focused TypeScript IMAP client for reading unseen messages over implicit TLS and marking messages\nas seen. It supports Cloudflare Workers through `cloudflare:sockets` and Node.js through `node:tls`.\n\n## API\n\n```ts\nimport { fetchMailboxEmails, markEmailsSeen } from \"./imap\";\n\nconst config = {\n  host: \"imap.example.com\",\n  port: 993,\n  user: \"mailbox@example.com\",\n  pass: process.env.IMAP_PASSWORD!,\n};\n\nconst messages = await fetchMailboxEmails(config);\nawait markEmailsSeen(config, messages.map(({ uid }) => uid));\n```\n\nExports:\n\n- `fetchMailboxEmails(config)` fetches up to 40 unseen inbox messages.\n- `markEmailsSeen(config, uids)` marks messages as `\\Seen` and attempts to add `$WixEmailCRM`.\n- `ImapConfig` and `ImapMessage` TypeScript types.\n\n## Runtime notes\n\n- Uses `AUTHENTICATE PLAIN` only after establishing TLS and receiving the server greeting.\n- Requires a runtime or bundler that supports either `cloudflare:sockets` or `node:tls`.\n- Message parsing is intentionally lightweight and does not fully implement MIME or encoded-word decoding.\n- Credentials are accepted at runtime and are never stored by the package.\n\nPackage code is community-submitted and has not been executed or security-audited by vibenpm.\n",
+        "packagePath": "packages/dd/imap/1.0.0"
+      }
+    ],
+    "latestVersion": "1.0.0"
+  },
+  {
+    "id": "vibenpm/hello-agent",
+    "owner": "vibenpm",
+    "name": "hello-agent",
+    "versions": [
+      {
+        "version": "1.0.0",
+        "description": "A tiny example package that greets an agent by name.",
+        "owner": {
+          "name": "vibenpm",
+          "url": "https://github.com"
+        },
+        "homepage": "https://github.com",
+        "repository": "https://github.com",
+        "license": "MIT",
+        "keywords": [
+          "example",
+          "greeting"
+        ],
+        "entrypoints": [
+          "index.js"
+        ],
+        "files": [
+          "README.md",
+          "agent-package.json",
+          "index.js"
+        ],
+        "readme": "# hello-agent\n\nA deliberately small example showing the required vibenpm package layout.\n\n```js\nimport { greet } from \"./index.js\";\n\ngreet(\"world\");\n```\n\nPackage code is community-submitted and has not been executed or security-audited by vibenpm.\n",
+        "packagePath": "packages/vibenpm/hello-agent/1.0.0"
+      }
+    ],
+    "latestVersion": "1.0.0"
+  }
+]

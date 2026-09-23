@@ -1,0 +1,30 @@
+{
+  "name": "@vibenpm/web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "predev": "npm run catalog:build",
+    "dev": "next dev",
+    "prebuild": "npm run catalog:build",
+    "build": "next build",
+    "lint": "eslint .",
+    "test": "node --test scripts/*.test.mjs",
+    "catalog:validate": "node scripts/catalog.mjs --validate",
+    "catalog:build": "node scripts/catalog.mjs --write"
+  },
+  "dependencies": {
+    "next": "16.3.4",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1",
+    "eslint": "^9.0.0",
+    "eslint-config-next": "16.3.4",
+    "typescript": "^5.8.0"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "../../../../schemas/agent-package.schema.json",
+  "name": "hello-agent",
+  "version": "1.0.0",
+  "owner": {
+    "name": "vibenpm",
+    "email": "packages@example.com",
+    "url": "https://github.com"
+  },
+  "description": "A tiny example package that greets an agent by name.",
+  "homepage": "https://github.com",
+  "repository": "https://github.com",
+  "license": "MIT",
+  "keywords": ["example", "greeting"],
+  "entrypoints": ["index.js"]
+}

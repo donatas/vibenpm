@@ -1,0 +1,13 @@
+{
+  "$schema": "../../../../schemas/agent-package.schema.json",
+  "name": "imap",
+  "version": "1.0.0",
+  "owner": {
+    "name": "dd",
+    "email": "donatas.d@gmail.com"
+  },
+  "description": "A small TypeScript IMAP client for fetching unseen email over implicit TLS.",
+  "repository": "https://github.com/donatas/vibenpm",
+  "keywords": ["imap", "email", "tls", "cloudflare-workers", "typescript"],
+  "entrypoints": ["imap.ts"]
+}
